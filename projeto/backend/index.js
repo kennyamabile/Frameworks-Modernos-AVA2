@@ -7,6 +7,9 @@ const db = require('./src/models');
 const tasksRoutes = require('./src/routes/tasks');
 const errorHandler = require('./src/middleware/errorHandler');
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpecs = require('./src/swagger');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -21,6 +24,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/tarefas', tasksRoutes);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 // middleware de erro (sempre depois das rotas)
 app.use(errorHandler);
