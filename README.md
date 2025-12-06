@@ -34,36 +34,6 @@ O projeto foi estruturado para atender **todos os requisitos avaliativos**, gara
 
 ---
 
-# 📂 Estrutura do Projeto
-
-### **Frontend**
-frontend/
-├── src/
-│ ├── components/
-│ ├── views/
-│ ├── router/
-│ ├── store/
-│ ├── services/
-│ └── App.vue
-├── public/
-└── index.html
-
-
-### **Backend**
-backend/
-├── src/
-│ ├── routes/
-│ ├── controllers/
-│ ├── models/
-│ ├── database/
-│ ├── middleware/
-│ └── server.js
-├── .env
-└── package.json
-
-
----
-
 # 🗄️ 1. Backend (API REST + MySQL ou Supabase)
 
 ## 1.1. Criando o Banco MySQL
