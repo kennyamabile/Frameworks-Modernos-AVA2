@@ -30,10 +30,7 @@ CREATE TABLE `tasks` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=latin1;
 
-/*Data for the table `tasks` */
-
-insert  into `tasks`(`id`,`title`,`description`,`done`,`createdAt`,`updatedAt`) values (44,'Smoothie de Banana','FaÃ§a algo',1,'2025-12-03 02:00:40','2025-12-03 02:00:40'),(144,'hehe','hehehe',0,'2025-12-03 02:01:01','2025-12-03 02:01:01');
-
+/*Data for the table `tasks` */
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

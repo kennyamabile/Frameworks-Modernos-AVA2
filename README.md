@@ -1,10 +1,12 @@
 # 📌 Projeto – Gerenciador de Tarefas (Vue 3 + Vuetify + Pinia + Express.js + MySQL/Supabase)
 
 ## 👥 Discentes
+
 - **Kenny Amabile da Rocha**
 - **Sandy Hikaru Honda**
 
 Este projeto implementa um sistema completo com:
+
 - Autenticação via **Google**
 - Gestão de sessão com **Pinia**
 - **CRUD completo** de tarefas
@@ -19,6 +21,7 @@ O projeto foi estruturado para atender **todos os requisitos avaliativos**, gara
 # 🚀 Tecnologias Utilizadas
 
 ### **Frontend**
+
 - Vue 3 (Vite)
 - Vuetify
 - Vue Router
@@ -27,6 +30,7 @@ O projeto foi estruturado para atender **todos os requisitos avaliativos**, gara
 - Firebase Auth / Supabase Auth
 
 ### **Backend**
+
 - Node.js + Express.js
 - Sequelize (MySQL) / Supabase Client
 - CORS
@@ -46,53 +50,66 @@ CREATE DATABASE tarefas_db;
 CREATE USER 'tarefas_user'@'localhost' IDENTIFIED BY 'senha_forte';
 GRANT ALL PRIVILEGES ON tarefas_db.* TO 'tarefas_user'@'localhost';
 FLUSH PRIVILEGES;
+
+CREATE TABLE `tasks` (
+  `id` int(11) NOT NULL auto_increment,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `done` tinyint(1) default '0',
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=latin1;
 ```
 
 ## 1.2. Se necessario ajuste as conexões com o banco em \backend\.env
 
 ## 1.3. Instalando e executando o backend
+
 cd backend
 npm install
 npm run dev
 
-
 A API ficará disponível em:
 
-http://localhost:3000
+http://localhost:3001
 
 ## 1.4. Endpoints da API REST
-Método	Rota	Descrição
-POST	/api/tarefas	Cria nova tarefa
-GET	/api/tarefas	Lista todas tarefas
-GET	/api/tarefas/:id	Obtém tarefa por ID
-PUT	/api/tarefas/:id	Atualiza tarefa
-DELETE	/api/tarefas/:id	Exclui tarefa
+
+Método Rota Descrição
+POST /api/tarefas Cria nova tarefa
+GET /api/tarefas Lista todas tarefas
+GET /api/tarefas/:id Obtém tarefa por ID
+PUT /api/tarefas/:id Atualiza tarefa
+DELETE /api/tarefas/:id Exclui tarefa
 
 O Sequelize realiza o sync() automaticamente e cria a tabela Tasks.
 
 # 🎨 2. Frontend (Vue 3 + Vuetify + Pinia)
+
 ## 2.1 Criando .env no frontend
+
 cd frontend
 cp .env.example .env
-
 
 Autenticação Google já configurada – nenhuma edição é necessária.
 
 ## 2.2 Instalando e rodando
+
 cd frontend
 npm install
 npm run dev
-
 
 A aplicação abre em:
 
 http://localhost:5173
 
 ## 2.3 Rotas
-Rota	Acesso	Descrição
-/login	Público	Login com Google
-/dashboard	Privado	Visão geral do usuário
-/tarefas	Privado	CRUD completo
+
+Rota Acesso Descrição
+/login Público Login com Google
+/dashboard Privado Visão geral do usuário
+/tarefas Privado CRUD completo
 
 Somente usuários autenticados podem acessar rotas internas.
 O estado de sessão é salvo no Pinia + localStorage.
@@ -109,13 +126,13 @@ Rotas protegidas com navigation guards
 
 Exemplo de guard:
 router.beforeEach((to, from, next) => {
-  const auth = useAuthStore();
+const auth = useAuthStore();
 
-  if (to.meta.requiresAuth && !auth.isLogged) {
-    next('/login');
-  } else {
-    next();
-  }
+if (to.meta.requiresAuth && !auth.isLogged) {
+next('/login');
+} else {
+next();
+}
 });
 
 # 🔗 4. Integração Frontend + Backend
@@ -129,6 +146,7 @@ CRUD de tarefas usando Axios:
 axios.get(`${import.meta.env.VITE_API_BASE_URL}/tarefas`);
 
 # ⚙️ 5. Comandos Rápidos
+
 Backend
 cd backend
 npm install
@@ -138,7 +156,6 @@ Frontend
 cd frontend
 npm install
 npm run dev
-
 
 Acessar:
 
