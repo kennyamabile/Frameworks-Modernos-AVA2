@@ -2,8 +2,8 @@
 
 ## 👥 Discentes
 
-- **Kenny Amabile da Rocha**
-- **Sandy Hikaru Honda**
+- Kenny Amabile da Rocha ([kenny.amabile@unemat.br](mailto:kenny.amabile@unemat.br))
+- Sandy Hikaru Honda ([sandy.honda@unemat.br](mailto:sandy.honda@unemat.br))
 
 Este projeto implementa um sistema completo com:
 
@@ -163,4 +163,4 @@ http://localhost:5173/login
 
 # 6. Acessar Swagger
 
-http://localhost:3001/api-docs/#/
+ Use o endpoint Swagger em http://localhost:3001/api-docs para testar a API, se desejar.
